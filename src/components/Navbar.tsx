@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +13,11 @@ const Navbar = () => {
     };
     
     window.addEventListener('scroll', handleScroll);
+    
+    // Check if user is logged in
+    const token = localStorage.getItem('portfolioToken');
+    setIsLoggedIn(!!token);
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -48,6 +54,26 @@ const Navbar = () => {
                   {link.title}
                 </a>
               ))}
+              
+              {/* Dashboard link only for logged in users */}
+              {isLoggedIn && (
+                <a
+                  href="/dashboard"
+                  className="text-white bg-portfolio-blue hover:bg-portfolio-darkBlue px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                >
+                  Dashboard
+                </a>
+              )}
+              
+              {/* Login link if not logged in */}
+              {!isLoggedIn && (
+                <a
+                  href="/login"
+                  className="text-white bg-portfolio-blue hover:bg-portfolio-darkBlue px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                >
+                  Login
+                </a>
+              )}
             </div>
           </div>
           
@@ -82,6 +108,28 @@ const Navbar = () => {
                 {link.title}
               </a>
             ))}
+            
+            {/* Dashboard link only for logged in users */}
+            {isLoggedIn && (
+              <a
+                href="/dashboard"
+                className="text-white bg-portfolio-blue hover:bg-portfolio-darkBlue block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Dashboard
+              </a>
+            )}
+            
+            {/* Login link if not logged in */}
+            {!isLoggedIn && (
+              <a
+                href="/login"
+                className="text-white bg-portfolio-blue hover:bg-portfolio-darkBlue block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Login
+              </a>
+            )}
           </div>
         </div>
       )}
