@@ -44,7 +44,7 @@ const Login = () => {
       localStorage.setItem('portfolioToken', data.token);
       */
       
-      // For now, simulate successful login with dummy credentials
+      // For now, simulate successful login with dummy credentials hhhh
       if (email === 'admin@example.com' && password === 'password123') {
         // Store token (will be from API in future)
         localStorage.setItem('portfolioToken', 'dummy-token');
