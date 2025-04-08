@@ -41,8 +41,8 @@ const AboutSection = () => {
                 <div>
                   <h4 className="font-semibold">Personal Info</h4>
                   <ul className="text-sm text-gray-600 space-y-1 mt-1">
-                    <li><span className="font-medium">Birthday:</span> December 23, 2000</li>
-                    <li><span className="font-medium">Phone:</span> +250 781 832 092</li>
+                    {/* <li><span className="font-medium">Birthday:</span> December 23, 2000</li>
+                    <li><span className="font-medium">Phone:</span> +250 781 832 092</li> */}
                     <li><span className="font-medium">Email:</span> ntihindukaelissa77@gmail.com</li>
                     <li><span className="font-medium">Location:</span> Kigali, Rwanda</li>
                     <li><span className="font-medium">Languages:</span> English, French, Kinyarwanda, Swahili</li>
