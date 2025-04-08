@@ -56,24 +56,24 @@ const Navbar = () => {
               ))}
               
               {/* Dashboard link only for logged in users */}
-              {isLoggedIn && (
+              {/* {isLoggedIn && (
                 <a
                   href="/dashboard"
                   className="text-white bg-portfolio-blue hover:bg-portfolio-darkBlue px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 >
                   Dashboard
                 </a>
-              )}
+              )} */}
               
               {/* Login link if not logged in */}
-              {!isLoggedIn && (
+              {/* {!isLoggedIn && (
                 <a
                   href="/login"
                   className="text-white bg-portfolio-blue hover:bg-portfolio-darkBlue px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 >
                   Login
                 </a>
-              )}
+              )} */}
             </div>
           </div>
           
