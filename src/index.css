@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +92,49 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer components {
+  .skill-badge {
+    @apply bg-portfolio-neutral text-portfolio-dark px-3 py-1 rounded-full text-sm font-medium inline-block m-1;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(to right, rgba(37, 99, 235, 0.1), rgba(245, 158, 11, 0.1));
+  }
+
+  .project-card {
+    @apply rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-portfolio-dark;
+  }
+
+  .section-subtitle {
+    @apply text-xl text-portfolio-darkBlue mb-12 max-w-2xl mx-auto text-center;
+  }
+
+  .timeline-item {
+    @apply relative pl-10 pb-10 border-l border-portfolio-blue/20 last:border-0 ml-6;
+  }
+
+  .timeline-dot {
+    @apply absolute -left-3 top-0 w-6 h-6 rounded-full bg-portfolio-blue flex items-center justify-center z-10;
   }
 }
